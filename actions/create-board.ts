@@ -3,7 +3,6 @@
 import { z } from "zod";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
-import { error } from "console";
 import { redirect } from "next/navigation";
 
 export type State = {
