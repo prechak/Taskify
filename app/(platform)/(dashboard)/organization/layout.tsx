@@ -1,5 +1,15 @@
 import React from "react";
 import { Sidebar } from "../_components/sidebar";
+import { startCase } from "lodash";
+import { auth } from "@clerk/nextjs/server";
+
+export async function generateMetadata() {
+  const { orgSlug } = auth();
+
+  return {
+    title: startCase(orgSlug || "organization"),
+  };
+}
 
 function OrganizationLayout({ children }: { children: React.ReactNode }) {
   return (
