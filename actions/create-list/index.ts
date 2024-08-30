@@ -8,6 +8,8 @@ import { createSafeAction } from "@/lib/create-safa-action";
 
 import { CreateList } from "./schema";
 import { InputType, ReturnType } from "./type";
+import { createAuditLog } from "@/lib/create-audit-log";
+import { ACTION, ENTITY_TYPE } from "@prisma/client";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = auth();
@@ -26,31 +28,37 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     const board = await db.board.findUnique({
       where: {
         id: boardId,
-        orgId
-      }
-    })
+        orgId,
+      },
+    });
 
-    if(!board){
+    if (!board) {
       return {
-        error: 'Board not found'
-      }
+        error: "Board not found",
+      };
     }
 
     const lastList = await db.list.findFirst({
-      where:{boardId: boardId},
-      orderBy: {order: 'desc'},
-      select:{order: true}
-    })
+      where: { boardId: boardId },
+      orderBy: { order: "desc" },
+      select: { order: true },
+    });
 
     const newOrder = lastList ? lastList.order + 1 : 1;
-
 
     list = await db.list.create({
       data: {
         title,
         boardId,
-        order: newOrder
+        order: newOrder,
       },
+    });
+
+    await createAuditLog({
+      entityTitle: list.title,
+      entityId: list.id,
+      entityType: ENTITY_TYPE.LIST,
+      action: ACTION.CREATE,
     });
   } catch (error) {
     return {
