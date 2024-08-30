@@ -52,6 +52,9 @@ export const Description = ({ data }: DescriptionProps) => {
       queryClient.invalidateQueries({
         queryKey: ["card", data.id],
       });
+      queryClient.invalidateQueries({
+        queryKey: ["card-logs", data.id],
+      });
       toast.success(`Card "${data.title}" update`);
       disableEditing();
     },
@@ -118,7 +121,7 @@ Description.Skeleton = function DescriptionSkeleton() {
       <Skeleton className="h-6 w-6 bg-neutral-200" />
       <div>
         <Skeleton className="w-24 h-6 mb-2 bg-neutral-200" />
-        <Skeleton className="w-[20rem] h-[78px] bg-neutral-200" />
+        <Skeleton className="w-[492.17px] h-[78px] bg-neutral-200" />
       </div>
     </div>
   );
