@@ -1,4 +1,4 @@
-# Taskify - 
+# Taskify 
 
 Welcome to Taskify, a Task management application that helps teams and individuals organize their work efficiently. With a sleek and intuitive interface, Taskify makes project management simple and enjoyable.
 
