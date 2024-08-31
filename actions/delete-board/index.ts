@@ -12,8 +12,12 @@ import { DeleteBoard } from "./schema";
 import { InputType, ReturnType } from "./type";
 import { createAuditLog } from "@/lib/create-audit-log";
 import { ACTION, ENTITY_TYPE } from "@prisma/client";
+import { decreaseAvailableCount } from "@/lib/org-limit";
+import { checkSubscription } from "@/lib/subscription";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
+  const isPro = checkSubscription();
+
   const { userId, orgId } = auth();
 
   if (!userId || !orgId) {
@@ -33,6 +37,10 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         orgId,
       },
     });
+
+    if (!isPro) {
+      await decreaseAvailableCount();
+    }
 
     await createAuditLog({
       entityTitle: board.title,
