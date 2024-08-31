@@ -1,6 +1,8 @@
-# Taskify 
+# Taskify
 
 Welcome to Taskify, a Task management application that helps teams and individuals organize their work efficiently. With a sleek and intuitive interface, Taskify makes project management simple and enjoyable.
+
+[!LANDINGPAGE](public/Landing-Page-Image.png)
 
 ## Features
 
@@ -23,6 +25,8 @@ Welcome to Taskify, a Task management application that helps teams and individua
 - **Board Limit**: Each organization has a board limit.
 - **Stripe Subscription**: Upgrade your organization to unlock unlimited boards.
 
+![ORG-BOARD-IMAGE](public/Org-Board-Image.png)
+
 ### Lists
 
 - **List Creation**: Add lists to organize tasks within a board.
@@ -34,10 +38,15 @@ Welcome to Taskify, a Task management application that helps teams and individua
 
 - **Card Creation**: Add cards within lists to represent tasks.
 - **Description**: Add detailed descriptions to cards.
+
+![DESCRIPTION](public/Description-Image.png)
+
 - **Rename & Delete**: Rename or delete cards.
 - **Drag & Drop Reorder**: Drag and drop cards to reorder them.
 - **Copy Cards**: Duplicate cards as needed.
 - **Card Activity Log**: Keep track of all activities related to a card.
+
+![CARD-BOARD-IMAGE](public/Card-Board-Image.png)
 
 ### Landing Page
 
