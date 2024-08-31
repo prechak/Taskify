@@ -1,6 +1,6 @@
-# Taskify - A Trello Clone
+# Taskify - 
 
-Welcome to **Taskify**, a Trello-inspired task management application that helps teams and individuals organize their work efficiently. With a sleek and intuitive interface, Taskify makes project management simple and enjoyable.
+Welcome to Taskify, a Task management application that helps teams and individuals organize their work efficiently. With a sleek and intuitive interface, Taskify makes project management simple and enjoyable.
 
 ## Features
 
