@@ -4,7 +4,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Skeleton } from "@/components/ui/skeleton";
 import { CardwithList } from "@/type";
 import { AlignLeft } from "lucide-react";
-import { useState, useRef, ElementRef, KeyboardEvent } from "react";
+import { useState, useRef, ElementRef, KeyboardEventHandler } from "react";
 import { useParams } from "next/navigation";
 import { useEventListener, useOnClickOutside } from "usehooks-ts";
 import { FormTextarea } from "@/components/form/form-textarea";
