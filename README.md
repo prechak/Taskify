@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Taskify - A Trello Clone
 
-## Getting Started
+Welcome to **Taskify**, a Trello-inspired task management application that helps teams and individuals organize their work efficiently. With a sleek and intuitive interface, Taskify makes project management simple and enjoyable.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### User Authentication
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Clerk Authentication**: Secure user authentication system using Clerk.
+- Sign up and log in to your personal account with Clerk's seamless integration.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Organizations & Workspaces
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Create and manage multiple organizations.
+- Organize your projects within workspaces specific to each organization.
 
-## Learn More
+### Boards
 
-To learn more about Next.js, take a look at the following resources:
+- **Board Creation**: Create boards to organize tasks within a workspace.
+- **Random Beautiful Cover Images**: Leverage Unsplash API to add stunning cover images to your boards.
+- **Activity Log**: Track all board activities within the organization.
+- **Rename & Delete**: Easily rename or delete boards.
+- **Board Limit**: Each organization has a board limit.
+- **Stripe Subscription**: Upgrade your organization to unlock unlimited boards.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Lists
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **List Creation**: Add lists to organize tasks within a board.
+- **Rename & Delete**: Rename or delete lists as needed.
+- **Drag & Drop Reorder**: Drag and drop lists to reorder them.
+- **Copy Lists**: Duplicate lists for easier task management.
 
-## Deploy on Vercel
+### Cards
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Card Creation**: Add cards within lists to represent tasks.
+- **Description**: Add detailed descriptions to cards.
+- **Rename & Delete**: Rename or delete cards.
+- **Drag & Drop Reorder**: Drag and drop cards to reorder them.
+- **Copy Cards**: Duplicate cards as needed.
+- **Card Activity Log**: Keep track of all activities related to a card.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Landing Page
+
+- Elegant landing page to introduce and promote Taskify.
+
+## Tech Stack
+
+- **Framework**: Next.js 14
+- **Server Actions**: Server-side actions for optimized performance.
+- **Frontend**: React
+- **Authentication**: Clerk for secure user management
+- **Database**: PostgreSQL (Supabase)
+- **ORM**: Prisma
+- **UI Components**: ShadcnUI & TailwindCSS
+- **API**: Unsplash API for random cover images
+- **Payment**: Stripe integration for organization subscriptions
